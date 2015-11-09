@@ -13,8 +13,11 @@ version '1.0'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
+retrolambda.oldJdk="/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home"
+
 repositories {
     mavenCentral()
+    maven { url 'http://chaperapp.dyndns-server.com:8081/artifactory/libs-snapshot-local' }
 }
 
 dependencies {
@@ -23,7 +26,10 @@ dependencies {
 	compile 'com.squareup.retrofit:retrofit:2.0.0-beta2'
 	compile 'com.squareup.retrofit:converter-gson:2.0.0-beta2'
 	compile 'com.google.code.gson:gson:2.3.1'
-	
+    compile 'org.xerial:sqlite-jdbc:3.8.11.2'
+
+    compile(group: 'org.roylance', name: 'yaorm', version: '0.26-SNAPSHOT')
+
 	testCompile 'org.hamcrest:hamcrest-all:1.3'
     testCompile 'junit:junit:4.11'
 }
